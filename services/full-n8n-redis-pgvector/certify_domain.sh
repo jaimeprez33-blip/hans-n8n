@@ -6,7 +6,7 @@ sudo apt install -y nginx
 sudo bash -c 'cat > /etc/nginx/sites-available/n8n <<EOF
 server {
     listen 80;
-    server_name CHANGE_URL;
+    server_name n8n-v2-demo.mitrabajo.site;
     location / {
         proxy_pass http://localhost:5678;
         proxy_http_version 1.1;
@@ -34,12 +34,12 @@ sudo certbot --nginx -d CHANGE_URL
 sudo bash -c 'cat > /etc/nginx/sites-available/n8n <<EOF
 server {
     listen 80;
-    server_name CHANGE_URL;
+    server_name n8n-v2-demo.mitrabajo.site;
     return 301 https://\$host\$request_uri;
 }
 server {
     listen 443 ssl;
-    server_name CHANGE_URL;
+    server_name n8n-v2-demo.mitrabajo.site;
     ssl_certificate /etc/letsencrypt/live/CHANGE_URL/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/CHANGE_URL/privkey.pem;
     ssl_protocols TLSv1.2 TLSv1.3;
