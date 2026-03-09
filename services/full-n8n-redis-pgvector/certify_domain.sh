@@ -6,7 +6,7 @@ sudo apt install -y nginx
 sudo bash -c 'cat > /etc/nginx/sites-available/n8n <<EOF
 server {
     listen 80;
-    server_name CHANGE_URL;
+    server_name n8n-v2-demo.mitrabajo.site;
     location / {
         proxy_pass http://localhost:5678;
         proxy_http_version 1.1;
